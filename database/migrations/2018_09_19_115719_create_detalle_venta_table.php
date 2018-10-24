@@ -20,7 +20,7 @@ class CreateDetalleVentaTable extends Migration
             $table->foreign('idarticulo')->references('id')->on('articulo');
             $table->integer('cantidad');
             $table->double('precio_venta');
-            $table->double('descuentp');          
+            $table->double('descuento');          
             $table->timestamps();
         });
     }

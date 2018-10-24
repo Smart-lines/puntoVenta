@@ -28,6 +28,7 @@ class ArticuloController extends Controller
      $articulos=DB::table('articulo as a')
      ->join('categoria as c', 'a.id_Categoria',"=","c.id")
      ->select('a.id','a.nombre','a.codigo','a.stock','c.nombre as categoria','a.descripcion','a.imagen','a.estado')
+     ->where('estado','=', 'Activo')
      ->paginate(7);
      return view('almacen.articulo.index',["articulos"=>$articulos,"searchText"=>$query]);
    }
